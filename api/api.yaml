@@ -1,0 +1,30 @@
+version: '3'
+services:
+  # 后端 API 程序
+  geekai-api:
+    image: registry.cn-shanghai.aliyuncs.com/yangjiacheng1996-geekai-plus/geekai-plus-api:v4.1.4-amd64
+    container_name: geekai-api
+    restart: always
+    # depends_on:
+    #   - geekai-mysql
+    #   - geekai-redis
+    environment:
+      - DEBUG=false
+      - LOG_LEVEL=info
+      - CONFIG_FILE=config.toml
+    ports:
+      - "5678:5678"
+      - "9999:9999"
+    volumes:
+      - /usr/share/zoneinfo/Asia/Shanghai:/etc/localtime
+      - ./config.toml:/var/www/app/config.toml
+      - ./logs:/var/www/app/logs
+      - ./static:/var/www/app/static
+      - ./leveldb:/var/www/app/data
+    networks:
+      - geekai_plus_network
+
+networks:
+  geekai_plus_network:
+    external: true
+      

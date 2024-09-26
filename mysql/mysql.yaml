@@ -1,0 +1,25 @@
+---
+version: '3'
+services:
+  # mysql
+  geekai-mysql:
+    image: registry.cn-shanghai.aliyuncs.com/yangjiacheng1996-geekai-plus/mysql:8.0.33
+    container_name: geekai-mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=12345678
+    ports:
+      - "3307:3306"
+    volumes :
+      - ./my.cnf:/etc/mysql/my.cnf
+      - ./data:/var/lib/mysql
+      - ./logs:/var/log/mysql
+      - ./init.d:/docker-entrypoint-initdb.d/
+    networks:
+      - geekai_plus_network
+
+networks:
+  geekai_plus_network:
+    external: true
+
