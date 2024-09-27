@@ -4,8 +4,8 @@ services:
     image: registry.cn-shanghai.aliyuncs.com/yangjiacheng1996-geekai-plus/midjourney-proxy:2.6.2
     container_name: geekai-midjourney-proxy
     restart: always
-    ports:
-      - "8082:8080"
+    # ports:
+    #   - "8082:8080"
     volumes:
       - ./config:/home/spring/config
     networks:

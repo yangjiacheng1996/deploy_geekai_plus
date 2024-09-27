@@ -8,8 +8,8 @@ services:
     command: redis-server --requirepass 12345678
     volumes :
       - ./data:/data
-    ports:
-      - "6380:6379"
+    # ports:
+    #   - "6380:6379"
     networks:
       - geekai_plus_network
 
