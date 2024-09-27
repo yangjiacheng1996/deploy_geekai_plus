@@ -7,8 +7,8 @@ services:
     restart: always
     # depends_on:
     #   - geekai-api
-    # ports:
-    #   - "8080:8080"
+    ports:
+      - "8080:8080"
     volumes:
       - ./logs:/var/log/nginx
       - ./conf.d:/etc/nginx/conf.d
