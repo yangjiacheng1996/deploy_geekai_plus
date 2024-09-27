@@ -5,8 +5,8 @@ services:
     container_name: geekai-xxl-job-admin
     image: registry.cn-shanghai.aliyuncs.com/yangjiacheng1996-geekai-plus/xxl-job-admin:2.4.0
     restart: always
-    ports:
-      - "8081:8080"
+    # ports:
+    #   - "8081:8080"
     environment:
       - PARAMS=--spring.config.location=/application.properties
     volumes:

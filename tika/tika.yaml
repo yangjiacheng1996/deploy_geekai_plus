@@ -5,8 +5,8 @@ services:
     image: registry.cn-shanghai.aliyuncs.com/yangjiacheng1996-geekai-plus/tika:latest
     container_name: tika
     restart: always
-    ports:
-      - "9998:9998"
+    # ports:
+    #   - "9998:9998"
     networks:
       - geekai_plus_network
 

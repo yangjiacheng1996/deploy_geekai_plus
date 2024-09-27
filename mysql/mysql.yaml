@@ -9,8 +9,8 @@ services:
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=12345678
-    ports:
-      - "3307:3306"
+    # ports:
+    #   - "3307:3306"
     volumes :
       - ./my.cnf:/etc/mysql/my.cnf
       - ./data:/var/lib/mysql
